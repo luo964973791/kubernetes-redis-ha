@@ -23,6 +23,19 @@ vi redis-pvc.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
+  name: data-redis-redis-ha-server-0
+  namespace: redis
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+    requests:
+      storage: 6Gi
+  storageClassName: rook-cephfs
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
   name: data-redis-redis-ha-server-1
   namespace: redis
 spec:
@@ -37,19 +50,6 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: data-redis-redis-ha-server-2
-  namespace: redis
-spec:
-  accessModes:
-  - ReadWriteMany
-  resources:
-    requests:
-      storage: 6Gi
-  storageClassName: rook-cephfs
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: data-redis-redis-ha-server-1
   namespace: redis
 spec:
   accessModes:

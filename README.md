@@ -10,7 +10,7 @@ helm pull stable/redis-ha
 tar zxvf redis-ha-4.4.4.tgz
 cd redis-ha
 vi values.yaml
-#取消注释，并添加storageClass,这里使用rook-ceph搭建的，所以天rook-ceph
+#取消注释，并添加storageClass,这里使用rook-ceph搭建的，所以填rook-ceph
 storageClass: "rook-ceph"
 ```
 
